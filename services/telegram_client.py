@@ -6,16 +6,20 @@ import requests
 def send_message_to_telegram(chat_id, message):
     
     # Definimos la URL del API de Telegram
-    url = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage"
+    #url = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage"
 
     # Definimos los parámetros del mensaje
-    params = {
-        "chat_id": chat_id,
-        "text": message
-    }
+    #params = {
+    #    "chat_id": chat_id,
+    #    "text": message
+    #}
 
     # Enviamos el mensaje a Telegram
-    response = requests.post(url, json=params)
+    #response = requests.post(url, json=params)
+
+    send_text = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage?chat_id=" + str(chat_id) + \
+                "&parse_mode=HTML&text=" + message
+    response = requests.get(send_text)
 
     # Verificamos si la solicitud fue exitosa
     if response.status_code != 200:
