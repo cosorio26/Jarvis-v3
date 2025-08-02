@@ -19,8 +19,10 @@ def send_message_to_telegram(chat_id, message):
 
     # Imprimimos la respuesta del servidor
     #print(f"Respuesta del servidor: {message}")
+    botToken = os.getenv("TELEGRAM_BOT_TOKEN")
+    print(f"Bot Token: {botToken}")
 
-    send_text = f"https://api.telegram.org/bot{os.getenv("TELEGRAM_BOT_TOKEN")}/sendMessage?chat_id=" + str(chat_id) + \
+    send_text = f"https://api.telegram.org/bot{botToken}/sendMessage?chat_id=" + str(chat_id) + \
                 "&parse_mode=HTML&text=" + message
     
     # Imprimimos lo que se va a enviar
