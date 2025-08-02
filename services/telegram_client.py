@@ -6,29 +6,29 @@ import requests
 def send_message_to_telegram(chat_id, message):
     
     # Definimos la URL del API de Telegram
-    #url = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage"
+    url = f"https://api.telegram.org/bot{os.getenv('TELEGRAM_BOT_TOKEN')}/sendMessage"
 
     # Definimos los parámetros del mensaje
-    #params = {
-    #    "chat_id": chat_id,
-    #    "text": message
-    #}
+    params = {
+        "chat_id": chat_id,
+        "text": message
+    }
 
     # Enviamos el mensaje a Telegram
-    #response = requests.post(url, json=params)
+    response = requests.post(url, json=params)
 
     # Imprimimos la respuesta del servidor
     #print(f"Respuesta del servidor: {message}")
-    botToken = os.getenv("TELEGRAM_BOT_TOKEN")
-    print(f"Bot Token: {botToken}")
+    #botToken = os.getenv("TELEGRAM_BOT_TOKEN")
+    #print(f"Bot Token: {botToken}")
 
-    send_text = f"https://api.telegram.org/bot{botToken}/sendMessage?chat_id=" + str(chat_id) + \
-                "&parse_mode=HTML&text=" + message
+    #send_text = f"https://api.telegram.org/bot{botToken}/sendMessage?chat_id=" + str(chat_id) + \
+    #           "&parse_mode=HTML&text=" + message
     
     # Imprimimos lo que se va a enviar
-    print(f"Enviando mensaje a Telegram: {send_text}")
+    #print(f"Enviando mensaje a Telegram: {send_text}")
     # Realizamos la solicitud GET para enviar el mensaje
-    response = requests.get(send_text)
+    #response = requests.get(send_text)
 
     # Verificamos si la solicitud fue exitosa
     if response.status_code != 200:
