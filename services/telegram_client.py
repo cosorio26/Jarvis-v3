@@ -11,8 +11,7 @@ def send_message_to_telegram(chat_id, message):
     # Definimos los parámetros del mensaje
     params = {
         "chat_id": chat_id,
-        "text": message,
-        "parse_mode": "Markdown"
+        "text": message
     }
 
     # Enviamos el mensaje a Telegram
