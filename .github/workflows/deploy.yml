@@ -20,7 +20,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt -t package/
-          cp -r handlers services utils lambda_function.py package/
+          cp -r handlers services lambda_function.py package/
 
       - name: Empaquetar Lambda en ZIP
         run: |
